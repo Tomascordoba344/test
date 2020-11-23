@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        $data = json_decode( file_get_contents('https://api.mercadolibre.com/sites/MLA/search?seller_id=179571326'), true );
+$json_string = json_encode($data);
+$file = 'sellers.json';
+file_put_contents($file, $json_string);
+        ?>
+    </body>
+</html>
